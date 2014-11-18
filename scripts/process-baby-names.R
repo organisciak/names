@@ -40,7 +40,7 @@ alive <- names[, list(count.in.names=sum(count)), by=list(sex, age)][,percent.of
 ages <- merge(alive, ages, by=c("sex", "age"))
 ages[,modifier:=percent/percent.of.names,]
 # Rough P(alive) estimate, assuming most 1 year olds are alive
-# In fact, we know h0w many don't survive by 1 year, 6.17/1000, 
+# In fact, we know how many don't survive by 1 year, 6.17/1000, 
 # but this would lend a false sense of precision
 ages[, percent.alive:=modifier/modifier[1], by=list(sex)]
 tmp <- merge(names, ages[,list(sex, age, percent.alive)], by=c("sex", "age"))
@@ -48,7 +48,7 @@ tmp[,alive.count:=round(count*percent.alive)]
 names.in.2014 <- tmp[,percent.alive:=NULL]
 rm(ages, alive, tmp)
 ## Save Living estimates per year
-write.csv(names.in.2014[alive.count>0, list(state, sex, year, name, alive.count)], "data/us-living-estimate-names-by-sex-state-year.csv", quote=F, row.names=F)
+write.csv(names.in.2014[alive.count>10, list(state, sex, year, name, alive.count)], "data/us-living-estimate-names-by-sex-state-year.csv", quote=F, row.names=F)
 
 ## Save living estimate by gender/name. More useful.
 tmp <- names.in.2014[, list(count=sum(alive.count)), by=list(sex, name)][order(-count)]
