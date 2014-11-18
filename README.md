@@ -1,7 +1,7 @@
 # US Names Datasets
 
 Baby name datasets presented in different ways.
-I find myself going back to this dataset frequently, and hope it is useful.
+I find myself going back to this data frequently.
 
 Included are estimates of name frequencies among living people in 2014, various slices of birth name statistics since 1910, and gender probabilities.
 
