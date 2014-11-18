@@ -1,4 +1,4 @@
-# Baby Names Datasets
+# US Names Datasets
 
 Baby name datasets presented in different ways.
 I find myself going back to this dataset frequently, and hope it is useful.
