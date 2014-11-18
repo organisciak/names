@@ -1,4 +1,3 @@
-name
 Michael
 James
 John
